@@ -1,0 +1,5 @@
+name: translate
+flip: [none, random, alternating]
+epochs: [10]
+translate: [0, 2, 4]
+seeds: {start: 0, count: 50}

@@ -1,0 +1,5 @@
+name: pilot
+flip: [none, random, alternating]
+epochs: [10, 20]
+translate: 2
+seeds: {start: 1000, count: 2}

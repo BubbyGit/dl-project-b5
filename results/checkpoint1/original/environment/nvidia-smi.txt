@@ -1,0 +1,15 @@
+Sat Nov  7 16:43:35 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 616.64                 KMD Version: 616.64        CUDA UMD Version: 13.4     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 5070      WDDM  |   00000000:01:00.0  On |                  N/A |
+|  0%   47C    P0             27W /  250W |    1859MiB /  12227MiB |      5%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
+name, driver_version, compute_cap, memory.total [MiB], power.limit [W], clocks.max.sm [MHz], clocks.max.memory [MHz], pcie.link.gen.max, pcie.link.width.max
+NVIDIA GeForce RTX 5070, 616.64, 12.0, 12227 MiB, 250.00 W, 3090 MHz, 14001 MHz, 4, 16

@@ -1,0 +1,5 @@
+name: table6
+flip: [none, random, alternating]
+epochs: [10, 20]
+translate: 2
+seeds: {start: 0, count: 50}

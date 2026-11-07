@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flipbench"
+version = "0.1.0"
+description = "Isolated evaluation of alternating horizontal flip on airbench94 / CIFAR-10"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Владимир Шама", email = "LeadMeow@gmail.com" }]
+dependencies = ["torch>=2.4", "torchvision>=0.19", "numpy", "scipy", "pyyaml"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools]
+packages = ["flipbench"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
