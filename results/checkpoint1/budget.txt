@@ -1,0 +1,67 @@
+GPU: NVIDIA GeForce RTX 5070
+pilot runs: 12
+sessions: 1
+
+wall time per run, s
+| epochs | flip | n | mean | std |
+|---|---|---|---|---|
+| 10 | none | 2 | 41.78 | 21.31 |
+| 10 | random | 2 | 34.62 | 11.11 |
+| 10 | alternating | 2 | 26.73 | 0.05 |
+| 20 | none | 2 | 52.88 | 0.01 |
+| 20 | random | 2 | 52.81 | 0.04 |
+| 20 | alternating | 2 | 52.90 | 0.08 |
+
+linear fit, s: 15.89 + 1.849 * epochs
+session overhead (data load + warm-up), s: 8.9
+estimates below use the median wall time over all flip modes with the same number of epochs: 10 epochs 26.76 s, 20 epochs 52.86 s
+
+table6 core: 3 flip modes x 2 epoch settings, s per seed: 238.8
+| seeds per config | runs | minutes | hours |
+|---|---|---|---|
+| 3 | 18 | 12.1 | 0.20 |
+| 10 | 60 | 40.0 | 0.67 |
+| 20 | 120 | 79.8 | 1.33 |
+| 50 | 300 | 199.2 | 3.32 |
+| 100 | 600 | 398.2 | 6.64 |
+
+per configuration, minutes
+| epochs | flip | n=3 | n=10 | n=20 | n=50 | n=100 |
+|---|---|---|---|---|---|---|
+| 10 | none | 1.3 | 4.5 | 8.9 | 22.3 | 44.6 |
+| 10 | random | 1.3 | 4.5 | 8.9 | 22.3 | 44.6 |
+| 10 | alternating | 1.3 | 4.5 | 8.9 | 22.3 | 44.6 |
+| 20 | none | 2.6 | 8.8 | 17.6 | 44.0 | 88.1 |
+| 20 | random | 2.6 | 8.8 | 17.6 | 44.0 | 88.1 |
+| 20 | alternating | 2.6 | 8.8 | 17.6 | 44.0 | 88.1 |
+
+sigma from original run (n=25, 9.9 epochs, alternating), pp: without TTA 0.139, with TTA 0.153
+required seeds per mode, two-sided t-test, alpha 0.05, power 0.8, delta from paper Table 6
+| epochs | TTA | contrast | delta, pp | n unpaired | n paired rho=0.25 | n paired rho=0.5 | core hours at n unpaired |
+|---|---|---|---|---|---|---|---|
+| 10 | no | alternating - random | 0.181 | 11 | 10 | 7 | 0.73 |
+| 10 | no | random - none | 0.793 | 2 | 3 | 3 | 0.14 |
+| 20 | no | alternating - random | 0.121 | 22 | 18 | 13 | 1.46 |
+| 20 | no | random - none | 0.928 | 2 | 3 | 3 | 0.14 |
+| 10 | yes | alternating - random | 0.070 | 77 | 59 | 40 | 5.11 |
+| 10 | yes | random - none | 0.542 | 3 | 4 | 3 | 0.20 |
+| 20 | yes | alternating - random | 0.097 | 41 | 32 | 22 | 2.72 |
+| 20 | yes | random - none | 0.704 | 3 | 3 | 3 | 0.20 |
+
+minimum detectable effect, pp, unpaired, alpha 0.05, power 0.8
+| seeds per mode | without TTA | with TTA |
+|---|---|---|
+| 3 | 0.427 | 0.471 |
+| 10 | 0.184 | 0.203 |
+| 20 | 0.126 | 0.140 |
+| 50 | 0.079 | 0.087 |
+| 100 | 0.055 | 0.061 |
+
+translate {0, 2, 4} x 3 flip modes x 10 epochs, assuming the cost of translate=2
+| seeds per config | runs | hours |
+|---|---|---|
+| 3 | 27 | 0.20 |
+| 10 | 90 | 0.67 |
+| 20 | 180 | 1.34 |
+| 50 | 450 | 3.35 |
+| 100 | 900 | 6.69 |

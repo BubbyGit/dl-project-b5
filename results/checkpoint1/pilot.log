@@ -1,0 +1,13 @@
+pilot: 6 cells x 2 seeds = 12 runs, 0 done, 12 pending
+[1/12] seed=1000 epochs=10 translate=2 flip=none        val_acc=0.9222 tta_val_acc=0.9338 time=56.8s eta=0:10:25
+[2/12] seed=1000 epochs=10 translate=2 flip=random      val_acc=0.9305 tta_val_acc=0.9385 time=42.5s eta=0:08:17
+[3/12] seed=1000 epochs=10 translate=2 flip=alternating val_acc=0.9301 tta_val_acc=0.9388 time=26.7s eta=0:06:18
+[4/12] seed=1000 epochs=20 translate=2 flip=none        val_acc=0.9260 tta_val_acc=0.9382 time=52.9s eta=0:05:58
+[5/12] seed=1000 epochs=20 translate=2 flip=random      val_acc=0.9390 tta_val_acc=0.9454 time=52.8s eta=0:05:24
+[6/12] seed=1000 epochs=20 translate=2 flip=alternating val_acc=0.9398 tta_val_acc=0.9465 time=52.8s eta=0:04:45
+[7/12] seed=1001 epochs=10 translate=2 flip=none        val_acc=0.9236 tta_val_acc=0.9334 time=26.7s eta=0:03:42
+[8/12] seed=1001 epochs=10 translate=2 flip=random      val_acc=0.9329 tta_val_acc=0.9399 time=26.8s eta=0:02:49
+[9/12] seed=1001 epochs=10 translate=2 flip=alternating val_acc=0.9318 tta_val_acc=0.9400 time=26.8s eta=0:02:02
+[10/12] seed=1001 epochs=20 translate=2 flip=none        val_acc=0.9251 tta_val_acc=0.9373 time=52.9s eta=0:01:24
+[11/12] seed=1001 epochs=20 translate=2 flip=random      val_acc=0.9393 tta_val_acc=0.9470 time=52.8s eta=0:00:43
+[12/12] seed=1001 epochs=20 translate=2 flip=alternating val_acc=0.9384 tta_val_acc=0.9467 time=53.0s eta=0:00:00

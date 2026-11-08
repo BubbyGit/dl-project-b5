@@ -1,0 +1,39 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.9, pytest-9.2.0, pluggy-1.7.0 -- ~\Desktop\DL-main\.venv\Scripts\python.exe
+rootdir: ~\Desktop\DL-main
+configfile: pyproject.toml
+testpaths: tests
+collecting ... collected 30 items
+
+tests/test_config.py::test_config_loads[pilot] PASSED                    [  3%]
+tests/test_config.py::test_config_loads[table6] PASSED                   [  6%]
+tests/test_config.py::test_config_loads[translate] PASSED                [ 10%]
+tests/test_config.py::test_table6_covers_the_reproduction_core PASSED    [ 13%]
+tests/test_config.py::test_pilot_seeds_are_disjoint_from_confirmatory_seeds PASSED [ 16%]
+tests/test_config.py::test_runs_are_ordered_by_seed PASSED               [ 20%]
+tests/test_config.py::test_unknown_keys_are_rejected PASSED              [ 23%]
+tests/test_data.py::test_none_never_flips PASSED                         [ 26%]
+tests/test_data.py::test_alternating_flips_every_image_every_epoch PASSED [ 30%]
+tests/test_data.py::test_random_flips_independently_every_epoch PASSED   [ 33%]
+tests/test_data.py::test_random_and_alternating_share_the_first_epoch PASSED [ 36%]
+tests/test_data.py::test_order_and_translation_do_not_depend_on_flip_mode PASSED [ 40%]
+tests/test_data.py::test_same_seed_reproduces_batches PASSED             [ 43%]
+tests/test_data.py::test_different_seeds_give_different_batches PASSED   [ 46%]
+tests/test_data.py::test_matches_original_loader[aug0-alternating-2] PASSED [ 50%]
+tests/test_data.py::test_matches_original_loader[aug1-alternating-0] PASSED [ 53%]
+tests/test_data.py::test_matches_original_loader[aug2-none-2] PASSED     [ 56%]
+tests/test_data.py::test_matches_original_loader[aug3-none-0] PASSED     [ 60%]
+tests/test_data.py::test_test_loader_matches_original PASSED             [ 63%]
+tests/test_model.py::test_hyperparameters_match_original PASSED          [ 66%]
+tests/test_model.py::test_network_initialization_matches_original PASSED [ 70%]
+tests/test_model.py::test_training_run_completes[none] PASSED            [ 73%]
+tests/test_model.py::test_training_run_completes[random] PASSED          [ 76%]
+tests/test_model.py::test_training_run_completes[alternating] PASSED     [ 80%]
+tests/test_original_log.py::test_parses_the_table_printed_by_the_original PASSED [ 83%]
+tests/test_original_log.py::test_ignores_an_unfinished_run PASSED        [ 86%]
+tests/test_stats.py::test_required_n_matches_textbook_values PASSED      [ 90%]
+tests/test_stats.py::test_minimum_detectable_effect_inverts_power PASSED [ 93%]
+tests/test_stats.py::test_describe PASSED                                [ 96%]
+tests/test_stats.py::test_compare_paired_uses_matching_seeds PASSED      [100%]
+
+============================= 30 passed in 12.94s =============================

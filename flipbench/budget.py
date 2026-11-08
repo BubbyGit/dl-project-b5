@@ -35,9 +35,13 @@ def render(runs, sessions, original, seed_counts):
     overhead = float(np.mean([s["data_load_s"] + s["warmup_s"] for s in sessions])) if sessions else 0.0
     gpu = (sessions[0]["environment"]["gpu"] or {}).get("name") if sessions else None
 
+    by_epochs = defaultdict(list)
+    for run in runs:
+        by_epochs[float(run["epochs"])].append(run["wall_time_s"])
+
     def run_seconds(e, flip):
-        cell = timing.get((float(e), flip))
-        return cell.mean if cell else intercept + slope * e
+        times = by_epochs.get(float(e))
+        return float(np.median(times)) if times else intercept + slope * e
 
     per_seed = sum(run_seconds(e, flip) for e in CORE_EPOCHS for flip in CORE_FLIPS)
     order = {flip: i for i, flip in enumerate(CORE_FLIPS)}
@@ -51,6 +55,8 @@ def render(runs, sessions, original, seed_counts):
         "",
         f"linear fit, s: {intercept:.2f} + {slope:.3f} * epochs",
         f"session overhead (data load + warm-up), s: {overhead:.1f}",
+        "estimates below use the median wall time over all flip modes with the same number of epochs: "
+        + ", ".join(f"{e:g} epochs {np.median(times):.2f} s" for e, times in sorted(by_epochs.items())),
         "",
         f"table6 core: {len(CORE_FLIPS)} flip modes x {len(CORE_EPOCHS)} epoch settings, s per seed: {per_seed:.1f}",
     ]
